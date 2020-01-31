@@ -1,0 +1,15 @@
+sudo: required
+services:
+    - docker
+langage: generic
+before_install:
+    - docker build -t rdthomashoutekier/ud-complex-fib -f ./client/Dockerfile.dev ./client
+
+script:
+    - docker run -e CI=true rdthomashoutekier/ud-complex-fib npm test -- --coverage
+
+after_sucess:
+    - docker build -t rdthomashoutekier/ud-complex-client ./client
+    - docker build -t rdthomashoutekier/ud-complex-server ./server
+    - docker build -t rdthomashoutekier/ud-complex-worker ./worker
+
