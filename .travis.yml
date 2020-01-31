@@ -22,3 +22,7 @@ after_sucess:
     - docker push rdthomashoutekier/ud-complex-nginx
     - docker push rdthomashoutekier/ud-complex-server
     - docker push rdthomashoutekier/ud-complex-worker
+
+    #deploy to AWS-ElasticBeanStalk
+    #send dockerrun.aws.json to AWS
+    
