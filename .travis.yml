@@ -14,3 +14,11 @@ after_sucess:
     - docker build -t rdthomashoutekier/ud-complex-server ./server
     - docker build -t rdthomashoutekier/ud-complex-worker ./worker
 
+#login to docker-cli
+- echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+
+#push to docker-hub
+- docker push rdthomashoutekier/ud-complex-client
+- docker push rdthomashoutekier/ud-complex-nginx
+- docker push rdthomashoutekier/ud-complex-server
+- docker push rdthomashoutekier/ud-complex-worker
