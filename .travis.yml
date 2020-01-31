@@ -10,6 +10,7 @@ script:
 
 after_sucess:
     - docker build -t rdthomashoutekier/ud-complex-client ./client
+    - docker build -t rdthomashoutekier/ud-complex-nginx ./nginx
     - docker build -t rdthomashoutekier/ud-complex-server ./server
     - docker build -t rdthomashoutekier/ud-complex-worker ./worker
 
